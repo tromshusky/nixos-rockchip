@@ -1,5 +1,5 @@
 {
-  description = "Build example NixOS image for Quartz64A";
+  description = "Build example NixOS image for PineTab2";
 
   inputs = {
     utils.url = "github:numtide/flake-utils";
@@ -10,9 +10,9 @@
 
   # Use cache with packages from nabam/nixos-rockchip CI.
   nixConfig = {
-    extra-substituters = [ "https://nabam-nixos-rockchip.cachix.org" ];
+    extra-substituters = [ "https://pinetab2th.cachix.org" ];
     extra-trusted-public-keys = [
-      "nabam-nixos-rockchip.cachix.org-1:BQDltcnV8GS/G86tdvjLwLFz1WeFqSk7O9yl+DR0AVM"
+      "pinetab2th.cachix.org-1:HfHv9nUkkyt3DlhR04CakY7yBzhQvb6CejsbAS1/44s="
     ];
   };
 
@@ -29,9 +29,9 @@
             {
               # Use cross-compilation for uBoot and Kernel.
               rockchip.uBoot =
-                inputs.rockchip.packages.${buildPlatform}.uBootQuartz64A;
+                inputs.rockchip.packages.${buildPlatform}.uBootPineTab2;
               boot.kernelPackages =
-                inputs.rockchip.legacyPackages.${buildPlatform}.kernel_linux_6_6_rockchip;
+                inputs.rockchip.legacyPackages.${buildPlatform}.kernel_linux_6_8_pinetab;
             }
 
             inputs.rockchip.nixosModules.noZFS # ZFS is broken on kernel from unstable
