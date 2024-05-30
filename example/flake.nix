@@ -5,7 +5,7 @@
     utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
 
-    rockchip = { url = "github:nabam/nixos-rockchip"; };
+    rockchip = { url = "github:tromshusky/nixos-rockchip"; };
   };
 
   # Use cache with packages from nabam/nixos-rockchip CI.
