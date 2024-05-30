@@ -55,11 +55,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1717084388,
-        "narHash": "sha256-zfldHGkAnQueMytBqeO30/S3tfcDOXW+3ymLkZuDhU8=",
+        "lastModified": 1717084458,
+        "narHash": "sha256-imVO5tVSSMWId/ySEPTlJorBYVhma02bO4w+pMhjnq4=",
         "owner": "tromshusky",
         "repo": "nixos-rockchip",
-        "rev": "2d0f2f9571eb6bfc9fee0c2c8e0d2b14c1d8b57f",
+        "rev": "1ebc5b984416f561a3b9b2c39bda660f414cd637",
         "type": "github"
       },
       "original": {
