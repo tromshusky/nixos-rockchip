@@ -33,6 +33,7 @@ let
     SND_SOC_RK817 = yes;
     SND_SOC_ROCKCHIP = yes;
     SND_SOC_ROCKCHIP_I2S_TDM = yes;
+    SYSFB_SIMPLEFB = yes;
     SPI_ROCKCHIP = yes;
     STMMAC_ETH = yes;
     VIDEO_HANTRO_ROCKCHIP = yes;
