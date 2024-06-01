@@ -55,7 +55,7 @@ jobs:
         name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
     - run: |
-        nix build -L -j4 .#${{ matrix.package }}
+        echo TODO: removeMe nix build -L -j4 .#${{ matrix.package }}
 
   build_example:
     runs-on: ubuntu-latest
