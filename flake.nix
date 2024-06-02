@@ -2,7 +2,7 @@
   description = "Build NixOS images for rockchip based computers";
 
   inputs = {
-    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgsStable.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgsUnstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     utils.url = "github:numtide/flake-utils";
   };
@@ -111,10 +111,19 @@
             modules = [
               self.nixosModules.sdImageRockchipInstaller
               {
-                system.stateVersion = "23.11";
+                system.stateVersion = "24.05";
 
                 rockchip.uBoot = value.uBoot;
-                boot.kernelPackages = value.kernel;
+                boot.kernelPackages = pkgs.linuxKernel.kernels.linux_6_9;
+                boot.kernelPatches = [
+                    {
+                      name = "v6.9.2-danctnix1";
+                      patch = (fetchurl {
+                        url = "https://raw.githubusercontent.com/tromshusky/nixos-rockchip/frankenstein/mynix/v6.9.2-danctnix1.patch";
+                        hash = "sha256-";
+                      });
+                    }
+                  ];
               }
               # Cross-compiling the whole system is hard, install from caches or compile with emulation instead.
               # { nixpkgs.crossSystem.system = "aarch64-linux"; nixpkgs.system = system;}
