@@ -51,7 +51,7 @@ jobs:
           extra-platforms = aarch64-linux
     - uses: cachix/cachix-action@v12
       with:
-        name: nabam-nixos-rockchip
+        name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
     - run: |
         nix build -L -j4 .#${{ matrix.package }}
@@ -72,7 +72,7 @@ jobs:
           extra-platforms = aarch64-linux
     - uses: cachix/cachix-action@v12
       with:
-        name: nabam-nixos-rockchip
+        name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
         pushFilter: '(-nixos-sd-image-.*)\.img$|-ext4-fs\.img$'
     - working-directory: ./example
@@ -150,7 +150,7 @@ jobs:
           extra-platforms = aarch64-linux
     - uses: cachix/cachix-action@v12
       with:
-        name: nabam-nixos-rockchip
+        name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
         pushFilter: '(-nixos-sd-image-.*)\.img$|-ext4-fs\.img$'
     - run: |
