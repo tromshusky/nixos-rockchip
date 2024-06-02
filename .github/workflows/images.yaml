@@ -1,5 +1,6 @@
 name: "Release Images"
 on:
+  workflow_dispatch: {}
   workflow_run:
     workflows: [Update Flakes]
     types:
@@ -53,8 +54,9 @@ jobs:
       with:
         name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
-    - run: |
-        nix build -L -j4 .#${{ matrix.package }}
+    - working-directory: ./mynix
+      run: |
+        nix build -L -j4 .#nixos
 
   build_example:
     runs-on: ubuntu-latest
@@ -75,7 +77,7 @@ jobs:
         name: pinetab2th
         authToken: '${{ secrets.CACHIX_TOKEN }}'
         pushFilter: '(-nixos-sd-image-.*)\.img$|-ext4-fs\.img$'
-    - working-directory: ./example
+    - working-directory: ./mynix
       run: |
         nix build -L -j4 --accept-flake-config --override-input rockchip ..
 
