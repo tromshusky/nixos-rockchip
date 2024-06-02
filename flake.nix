@@ -118,9 +118,9 @@
                 boot.kernelPatches = [
                     {
                       name = "v6.9.2-danctnix1";
-                      patch = (builtins.fetchurl {
+                      patch = (input.nixpkgsStable.fetchurl {
                         url = "https://raw.githubusercontent.com/tromshusky/nixos-rockchip/frankenstein/mynix/v6.9.2-danctnix1.patch";
-                        hash = "sha256-";
+                        hash = "sha256-qIasbPqC4lraZSXRzslNinQ5ldOKAu6w5r76RGhl5N0=";
                       });
                     }
                   ];
