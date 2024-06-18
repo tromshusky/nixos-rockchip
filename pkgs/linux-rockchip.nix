@@ -41,6 +41,7 @@ let
     BES2600 = module;
     BES2600_WLAN_STDIO = yes;
     BES2600_DEBUGFS = yes;
+    FB_SIMPLE = yes;
   };
 in with pkgs.linuxKernel; {
   linux_6_6 = pkgs.linuxPackages_6_6;
