@@ -6,6 +6,8 @@ let
     CHARGER_RK817 = yes;
     COMMON_CLK_RK808 = yes;
     COMMON_CLK_ROCKCHIP = yes;
+    DRM_SIMPLEDRM = no;
+    FB_SIMPLE = yes;
     GPIO_ROCKCHIP = yes;
     MFD_RK808 = yes;
     MMC_DW = yes;
