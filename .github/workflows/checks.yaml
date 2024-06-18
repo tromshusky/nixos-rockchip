@@ -58,7 +58,7 @@ jobs:
           extra-platforms = aarch64-linux
     - uses: cachix/cachix-action@v12
       with:
-        name: nabam-nixos-rockchip
+        name: pinetab2th
     - run: |
         nix build -L -j4 .#${{ matrix.package }}
 
@@ -84,7 +84,7 @@ jobs:
           extra-platforms = aarch64-linux
     - uses: cachix/cachix-action@v12
       with:
-        name: nabam-nixos-rockchip
+        name: pinetab2th
     - working-directory: ./example
       run: |
         nix build -L -j4 --accept-flake-config --override-input rockchip ..

@@ -5,14 +5,15 @@
     utils.url = "github:numtide/flake-utils";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
 
-    rockchip = { url = "github:nabam/nixos-rockchip"; };
+    rockchip = { url = "github:tromshusky/nixos-rockchip"; };
   };
 
-  # Use cache with packages from nabam/nixos-rockchip CI.
+  # Use cache with packages from cachix CI.
   nixConfig = {
-    extra-substituters = [ "https://nabam-nixos-rockchip.cachix.org" ];
+    extra-substituters = [ "https://nabam-nixos-rockchip.cachix.org" "https://pinetab2th.cachix.org" ];
     extra-trusted-public-keys = [
       "nabam-nixos-rockchip.cachix.org-1:BQDltcnV8GS/G86tdvjLwLFz1WeFqSk7O9yl+DR0AVM"
+      "pinetab2th.cachix.org-1:HfHv9nUkkyt3DlhR04CakY7yBzhQvb6CejsbAS1/44s="
     ];
   };
 
