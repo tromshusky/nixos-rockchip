@@ -41,12 +41,9 @@ let
     BES2600 = module;
     BES2600_WLAN_STDIO = yes;
     BES2600_DEBUGFS = yes;
+    FB_SIMPLE = yes;
   };
 in with pkgs.linuxKernel; {
-  linux_6_1 = pkgs.linuxPackages_6_1;
-  linux_6_1_rockchip = packagesFor
-    (kernels.linux_6_1.override { structuredExtraConfig = kernelConfig; });
-
   linux_6_6 = pkgs.linuxPackages_6_6;
   linux_6_6_rockchip = packagesFor
     (kernels.linux_6_6.override { structuredExtraConfig = kernelConfig; });
